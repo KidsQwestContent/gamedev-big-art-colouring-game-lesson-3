@@ -3775,19 +3775,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
 		C3.Plugins.System.Cnds.PickAll,
 		C3.Plugins.System.Cnds.IsGroupActive,
-		C3.Plugins.Touch.Cnds.IsTouchingObject,
+		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Plugins.System.Cnds.CompareVar,
-		C3.Plugins.Touch.Cnds.CompareTouchSpeed,
-		C3.Plugins.System.Cnds.EvaluateExpression,
-		C3.Plugins.Touch.Exps.X,
-		C3.Plugins.Touch.Exps.Y,
-		C3.Plugins.System.Cnds.Repeat,
-		C3.Plugins.DrawingCanvas.Acts.FillEllipse,
-		C3.Plugins.System.Exps.loopindex,
-		C3.Plugins.System.Exps.rgba255,
-		C3.Plugins.DrawingCanvas.Acts.SetDrawBlend,
-		C3.Plugins.Touch.Cnds.OnTouchEnd,
-		C3.Plugins.Touch.Cnds.OnDoubleTapGestureObject,
 		C3.Plugins.Sprite.Cnds.PickTopBottom,
 		C3.Plugins.Sprite.Acts.SetDefaultColor,
 		C3.Plugins.System.Exps.rgbex255,
@@ -3966,33 +3955,6 @@ self.C3_ExpressionFuncs = [
 			return () => n0.ExpInstVar();
 		},
 		() => "Coloring",
-		() => 0,
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
-			return () => or(((v0.GetValue()) === ((-1)) ? 1 : 0), ((v1.GetValue()) === ((-1)) ? 1 : 0));
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const v1 = p._GetNode(1).GetVar();
-			return () => (f0("BOARD") - v1.GetValue());
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const f1 = p._GetNode(1).GetBoundMethod();
-			const v2 = p._GetNode(2).GetVar();
-			const v3 = p._GetNode(3).GetVar();
-			const f4 = p._GetNode(4).GetBoundMethod();
-			return () => C3.lerp(v0.GetValue(), (f1("BOARD") - v2.GetValue()), ((1 / v3.GetValue()) * f4()));
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const v1 = p._GetNode(1).GetVar();
-			const v2 = p._GetNode(2).GetVar();
-			const v3 = p._GetNode(3).GetVar();
-			return () => f0(v1.GetValue(), v2.GetValue(), v3.GetValue(), 100);
-		},
-		() => -1,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const v1 = p._GetNode(1).GetVar();
@@ -4002,6 +3964,7 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "Eraser",
 		() => 100,
+		() => 0,
 		() => 960,
 		() => 620,
 		() => 543,
